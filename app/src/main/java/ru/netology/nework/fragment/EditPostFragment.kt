@@ -188,7 +188,7 @@ class EditPostFragment : Fragment() {
                 with(binding.editContent) {
                     AndroidUtils.hideKeyboard(this)
                     binding.group.visibility = android.view.View.GONE
-                    findNavController().navigate(ru.netology.inmedia.R.id.tabsFragment)
+                    findNavController().navigate(R.id.tabsFragment)
                 }
             }
 
@@ -270,6 +270,7 @@ class EditPostFragment : Fragment() {
                             mediaPlayer?.setMediaItem(mediaItem)
                         }
                     }
+                    else -> {}
                 }
 
             }

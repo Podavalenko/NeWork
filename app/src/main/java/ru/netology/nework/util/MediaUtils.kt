@@ -15,7 +15,7 @@ object MediaUtils {
 
     fun loadPostImage(imageView: ImageView, url: String, post: Post) {
         Glide.with(imageView)
-            .load("$url/media/${post.attachment?.url}")
+            .load(post.attachment?.url)
             .error(R.drawable.ic_error)
             .placeholder(R.drawable.ic_loading)
             .timeout(10_000)
@@ -24,7 +24,7 @@ object MediaUtils {
 
     fun loadPostAvatar(imageView: ImageView, url: String, post: Post) {
         Glide.with(imageView)
-            .load("$url/avatars/${post.authorAvatar}")
+            .load(post.authorAvatar)
             .error(R.drawable.ic_error)
             .placeholder(R.drawable.ic_loading)
             .circleCrop()

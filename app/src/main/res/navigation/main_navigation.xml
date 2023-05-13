@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/authFragment"
-        android:name="ru.netology.inmedia.fragment.AuthFragment"
+        android:name="ru.netology.nework.fragment.AuthFragment"
         android:label="Авторизация"
         tools:layout="@layout/fragment_auth" >
         <action
@@ -16,12 +16,12 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="ru.netology.inmedia.fragment.SignUpFragment"
+        android:name="ru.netology.nework.fragment.SignUpFragment"
         android:label="Регистрация"
         tools:layout="@layout/fragment_sign_up" />
     <fragment
         android:id="@+id/userPageFragment"
-        android:name="ru.netology.inmedia.fragment.UserPageFragment"
+        android:name="ru.netology.nework.fragment.UserPageFragment"
         tools:layout="@layout/fragment_user_page" >
         <action
             android:id="@+id/action_userPageFragment_to_listUserOccupationFragment"
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/listEventsFragment"
-        android:name="ru.netology.inmedia.fragment.ListEventsFragment"
+        android:name="ru.netology.nework.fragment.ListEventsFragment"
         tools:layout="@layout/fragment_list_events" >
         <action
             android:id="@+id/action_listEventsFragment_to_cardEventFragment"
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/listPostFragment"
-        android:name="ru.netology.inmedia.fragment.ListPostFragment"
+        android:name="ru.netology.nework.fragment.ListPostFragment"
         tools:layout="@layout/fragment_list_post" >
         <action
             android:id="@+id/action_listPostFragment_to_cardPostFragment"
@@ -66,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/tabsFragment"
-        android:name="ru.netology.inmedia.fragment.TabsFragment" >
+        android:name="ru.netology.nework.fragment.TabsFragment" >
         <action
             android:id="@+id/action_tabsFragment_to_listEventsFragment"
             app:destination="@id/listEventsFragment" />
@@ -82,7 +82,7 @@
     </fragment>
     <fragment
         android:id="@+id/listUsersFragment"
-        android:name="ru.netology.inmedia.fragment.ListUsersFragment"
+        android:name="ru.netology.nework.fragment.ListUsersFragment"
         tools:layout="@layout/fragment_list_users" >
         <action
             android:id="@+id/action_listUsersFragment_to_userPageFragment"
@@ -90,7 +90,7 @@
     </fragment>
     <fragment
         android:id="@+id/cardEventFragment"
-        android:name="ru.netology.inmedia.fragment.CardEventFragment"
+        android:name="ru.netology.nework.fragment.CardEventFragment"
         android:label="Событие"
         tools:layout="@layout/fragment_card_event" >
         <action
@@ -99,7 +99,7 @@
     </fragment>
     <fragment
         android:id="@+id/cardPostFragment"
-        android:name="ru.netology.inmedia.fragment.CardPostFragment"
+        android:name="ru.netology.nework.fragment.CardPostFragment"
         android:label="Пост"
         tools:layout="@layout/fragment_card_post" >
         <action
@@ -111,7 +111,7 @@
     </fragment>
     <fragment
         android:id="@+id/listUserOccupationFragment"
-        android:name="ru.netology.inmedia.fragment.ListUserOccupationFragment"
+        android:name="ru.netology.nework.fragment.ListUserOccupationFragment"
         tools:layout="@layout/fragment_list_user_occupation" >
         <action
             android:id="@+id/action_listUserOccupationFragment_to_userOccupationDetailsFragment"
@@ -119,38 +119,38 @@
     </fragment>
     <fragment
         android:id="@+id/newPostFragment"
-        android:name="ru.netology.inmedia.fragment.NewPostFragment"
+        android:name="ru.netology.nework.fragment.NewPostFragment"
         android:label="Создание нового поста" />
     <fragment
         android:id="@+id/editPostFragment"
-        android:name="ru.netology.inmedia.fragment.EditPostFragment"
+        android:name="ru.netology.nework.fragment.EditPostFragment"
         android:label="Редактирование поста"
         tools:layout="@layout/fragment_edit_post" />
     <fragment
         android:id="@+id/imageFragment"
-        android:name="ru.netology.inmedia.fragment.ImageFragment"
+        android:name="ru.netology.nework.fragment.ImageFragment"
         android:label="Изображение"
         tools:layout="@layout/fragment_image" />
     <fragment
         android:id="@+id/editEventFragment"
-        android:name="ru.netology.inmedia.fragment.EditEventFragment"
+        android:name="ru.netology.nework.fragment.EditEventFragment"
         android:label="Редактирование события" />
     <fragment
         android:id="@+id/newEventFragment"
-        android:name="ru.netology.inmedia.fragment.NewEventFragment"
+        android:name="ru.netology.nework.fragment.NewEventFragment"
         android:label="Создание нового события" />
     <fragment
         android:id="@+id/userOccupationDetailsFragment"
-        android:name="ru.netology.inmedia.fragment.UserOccupationDetailsFragment"
+        android:name="ru.netology.nework.fragment.UserOccupationDetailsFragment"
         android:label="Место работы"
         tools:layout="@layout/fragment_user_occupation_details" />
     <fragment
         android:id="@+id/newJobFragment"
-        android:name="ru.netology.inmedia.fragment.NewJobFragment"
+        android:name="ru.netology.nework.fragment.NewJobFragment"
         android:label="Добавление нового места работы" />
     <fragment
         android:id="@+id/myPageFragment"
-        android:name="ru.netology.inmedia.fragment.MyPageFragment"
+        android:name="ru.netology.nework.fragment.MyPageFragment"
         android:label="Мой профиль" >
         <action
             android:id="@+id/action_myPageFragment_to_newJobFragment"
@@ -158,16 +158,16 @@
     </fragment>
     <fragment
         android:id="@+id/cardMyOccupationFragment"
-        android:name="ru.netology.inmedia.fragment.CardMyOccupationFragment"
+        android:name="ru.netology.nework.fragment.CardMyOccupationFragment"
         android:label="Место работы"
         tools:layout="@layout/fragment_card_user_occupation" />
     <fragment
         android:id="@+id/editMyJobFragment"
-        android:name="ru.netology.inmedia.fragment.EditMyJobFragment"
+        android:name="ru.netology.nework.fragment.EditMyJobFragment"
         android:label="Редактирование места работы" />
     <fragment
         android:id="@+id/listMyOccupationFragment"
-        android:name="ru.netology.inmedia.fragment.ListMyOccupationFragment"
+        android:name="ru.netology.nework.fragment.ListMyOccupationFragment"
         android:label="Опыт работы"
         tools:layout="@layout/fragment_list_my_occupation" >
         <action

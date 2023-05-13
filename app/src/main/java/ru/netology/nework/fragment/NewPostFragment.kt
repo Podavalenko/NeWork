@@ -233,6 +233,7 @@ class NewPostFragment : Fragment() {
                             mediaPlayer?.setMediaItem(mediaItem)
                         }
                     }
+                    else -> {}
                 }
             }
         }

@@ -7,12 +7,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "ru.netology.nework"
         minSdk 26
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -24,6 +24,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             manifestPlaceholders.usesCleartextTraffic = false
+            buildConfigField "String", "BASE_URL", '"https://netomedia.ru/"'
+        }
+        debug {
             buildConfigField "String", "BASE_URL", '"https://netomedia.ru/"'
         }
     }
@@ -56,7 +59,7 @@ dependencies {
     def lifecycle_version = "2.6.1"
     def mdc_version = "1.8.0"
     def nav_version = "2.5.3"
-    def room_version = "2.5.1"
+    def room_version = "2.6.0-alpha01"
     def firebase_version = "29.3.0"
     def glide_version = "4.13.1"
     def retrofit_version = "2.9.0"
