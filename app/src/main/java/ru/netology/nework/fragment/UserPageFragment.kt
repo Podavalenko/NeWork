@@ -33,7 +33,7 @@ private const val BASE_URL = "https://netomedia.ru/api/media"
 @AndroidEntryPoint
 class UserPageFragment : Fragment() {
 
-    private lateinit var recyclerView: PostRecyclerView
+    private var recyclerView: PostRecyclerView? = null
 
     companion object {
         var Bundle.showUser: User? by UserArg
@@ -51,17 +51,11 @@ class UserPageFragment : Fragment() {
             false
         )
 
-        val wallViewModel: WallViewModel by viewModels(
-            ownerProducer = ::requireParentFragment
-        )
+        val wallViewModel: WallViewModel by viewModels()
 
-        val postViewModel: PostViewModel by viewModels(
-            ownerProducer = ::requireParentFragment
-        )
+        val postViewModel: PostViewModel by viewModels()
 
-        val jobViewModel: JobViewModel by viewModels(
-            ownerProducer = ::requireParentFragment
-        )
+        val jobViewModel: JobViewModel by viewModels()
 
         val mediaObserver = MediaLifecycleObserver()
 
@@ -110,7 +104,7 @@ class UserPageFragment : Fragment() {
                     }
 
                     override fun onFullScreenImage(post: Post) {
-                        findNavController().navigate(R.id.imageFragment)
+                        findNavController().navigate(R.id.imageFragment, Bundle().apply { textArg = post.attachment?.url })
                     }
 
                     override fun onPlayAudio(post: Post) {
@@ -167,19 +161,23 @@ class UserPageFragment : Fragment() {
         return binding.root
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        recyclerView = null
+    }
+
     override fun onResume() {
-        if (::recyclerView.isInitialized) recyclerView.createPlayer()
+        recyclerView?.createPlayer()
         super.onResume()
     }
 
     override fun onPause() {
-        if (::recyclerView.isInitialized) recyclerView.releasePlayer()
+        recyclerView?.releasePlayer()
         super.onPause()
     }
 
-
     override fun onStop() {
-        if (::recyclerView.isInitialized) recyclerView.releasePlayer()
+        recyclerView?.releasePlayer()
         super.onStop()
     }
 

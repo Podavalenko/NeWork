@@ -10,8 +10,6 @@ import ru.netology.nework.databinding.FragmentImageBinding
 import ru.netology.nework.fragment.NewPostFragment.Companion.textArg
 import ru.netology.nework.service.imageLoad
 
-private const val BASE_URL = "https://netomedia.ru/api/"
-
 @AndroidEntryPoint
 class ImageFragment: Fragment() {
 
@@ -29,7 +27,9 @@ class ImageFragment: Fragment() {
 
         with(binding) {
             arguments?.textArg.let {
-                showImage.imageLoad("${BASE_URL}/media/$it")
+                if (it != null) {
+                    showImage.imageLoad(it)
+                }
             }
 
         }

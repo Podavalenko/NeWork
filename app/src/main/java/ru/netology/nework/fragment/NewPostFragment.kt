@@ -27,7 +27,6 @@ import com.google.android.exoplayer2.MediaItem
 import dagger.hilt.android.AndroidEntryPoint
 import ru.netology.nework.enumeration.AttachmentType
 import ru.netology.nework.util.MediaUtils
-import ru.netology.nework.util.PermissionsManager
 import java.io.File
 
 @AndroidEntryPoint

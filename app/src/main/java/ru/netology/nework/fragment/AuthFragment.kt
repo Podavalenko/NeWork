@@ -27,9 +27,7 @@ class AuthFragment : Fragment() {
             false
         )
 
-        val signInViewModel: SignInViewModel by viewModels(
-            ownerProducer = ::requireParentFragment
-        )
+        val signInViewModel: SignInViewModel by viewModels()
 
         with(binding) {
             signInButton.setOnClickListener {

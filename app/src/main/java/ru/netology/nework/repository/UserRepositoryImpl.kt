@@ -81,8 +81,8 @@ class UserRepositoryImpl @Inject constructor(
 
     override suspend fun saveUserAvatar(user: User, upload: MediaUpload) {
         try {
-            val media = upload(upload)
-            user.avatar = (media.url)
+           // val media = upload(upload)
+              //  user.avatar = (media.url)
         } catch (e: AppError) {
             throw e
         } catch (e: IOException) {

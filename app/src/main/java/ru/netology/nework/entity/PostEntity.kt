@@ -4,7 +4,6 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import ru.netology.nework.dto.Attachment
-import ru.netology.nework.dto.Coordinates
 import ru.netology.nework.dto.Post
 import ru.netology.nework.enumeration.AttachmentType
 
@@ -74,19 +73,6 @@ data class AttachmentEmbeddable(
     companion object {
         fun fromDto(dto: Attachment?) = dto?.let {
             AttachmentEmbeddable(it.url, it.type)
-        }
-    }
-}
-
-data class CoordsEmbeddable(
-    val lat: Double,
-    val long: Double
-) {
-    fun toDto() = Coordinates(lat, long)
-
-    companion object {
-        fun fromDto(dto: Coordinates?) = dto?.let {
-            CoordsEmbeddable(it.lat, it.long)
         }
     }
 }

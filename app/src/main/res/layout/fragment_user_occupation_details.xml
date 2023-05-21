@@ -19,7 +19,6 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/position"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin"
@@ -42,14 +41,12 @@
             android:layout_margin="@dimen/margin" />
 
         <TextView
-            android:id="@+id/company"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
             tools:text="Название фирмы" />
 
         <TextView
-            android:id="@+id/period_of_work"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin"
@@ -64,7 +61,6 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin"
@@ -73,7 +69,6 @@
                 tools:text="начало работы" />
 
             <TextView
-                android:id="@+id/end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin"

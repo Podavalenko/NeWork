@@ -1,7 +1,7 @@
 package ru.netology.nework.dto
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import ru.netology.nework.enumeration.EventType
 
 @Parcelize

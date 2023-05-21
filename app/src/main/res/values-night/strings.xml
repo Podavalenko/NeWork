@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_title">NeWork</string>
     <string name="login">Введите логин</string>
     <string name="password">Введите пароль</string>
     <string name="sign_in_button">войти</string>
@@ -9,11 +8,8 @@
     <string name="sign_up">регистрация</string>
     <string name="e_mail">Введите e-mail</string>
     <string name="like">Like</string>
-    <string name="share">Share</string>
-    <string name="comment">Comment</string>
     <string name="menu_button_description">Кнопка меню</string>
     <string name="play_video_description">Просмотр видео</string>
-    <string name="avatar_description">Фото профиля</string>
     <string name="play_audio">Воспроизведение аудио</string>
     <string name="edit_post">Редактировать</string>
     <string name="delete_post">Удалить</string>
@@ -42,18 +38,12 @@
     <string name="load_ok">Успешно загружено</string>
     <string name="edit_event">Редактирование события</string>
     <string name="edit_event_name">Редактирование события</string>
-    <string name="permissions_needed_title">Приложению нужно разрешение</string>
-    <string name="permissions_needed_message">Нужны следующие разрешения:</string>
     <string name="everything_fine">OK</string>
     <string name="grant_storage_permissions_dialog_message">Нужен доступ к файлам!</string>
     <string name="online">Онлайн</string>
     <string name="offline">Офлайн</string>
-    <string name="type_unknown">Способы участия уточняйте у организатора.</string>
-    <string name="choose_event_type">Выберите тип</string>
-    <string name="choose_event_type_description">Выбор типа мероприятия</string>
     <string name="add_new_occupation">Добавить место работы</string>
     <string name="period_of_work">Период работы здесь</string>
-    <string name="till_now">По настоящее время</string>
     <string name="date_time_pick">Выбор даты и времени мероприятия</string>
     <string name="load_avatar">Загрузить аватар</string>
     <string name="name_company">Название фирмы</string>

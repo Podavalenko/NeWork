@@ -27,9 +27,7 @@ class SignUpFragment: Fragment() {
             false
         )
 
-        val signUpViewModel: SignUpViewModel by viewModels(
-            ownerProducer = ::requireParentFragment
-        )
+        val signUpViewModel: SignUpViewModel by viewModels()
 
         with(binding) {
             signUpButton.setOnClickListener {

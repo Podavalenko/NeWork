@@ -16,15 +16,4 @@ class MediaLifecycleObserver: LifecycleObserver {
         player?.prepareAsync()
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
-    fun onPause() {
-        player?.pause()
-    }
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    fun onStop() {
-        player?.release()
-        player = null
-    }
-
 }

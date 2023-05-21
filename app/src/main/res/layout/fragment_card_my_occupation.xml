@@ -17,7 +17,6 @@
         android:padding="@dimen/padding">
 
         <ImageView
-            android:id="@+id/job_avatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -31,7 +30,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/position"
                 android:layout_marginTop="@dimen/margin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -40,20 +38,17 @@
                 tools:text="Должность" />
 
             <TextView
-                android:id="@+id/company"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 tools:text="Название фирмы" />
 
             <TextView
-                android:id="@+id/start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp" />
@@ -83,7 +78,6 @@
                 tools:ignore="TouchTargetSizeCheck" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/get_job_details"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"

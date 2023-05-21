@@ -16,7 +16,6 @@
         app:cardCornerRadius="@dimen/corner_radius">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/name"
             android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
@@ -28,7 +27,6 @@
             android:inputType="text">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/name_input"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
@@ -40,7 +38,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/login"
             android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
@@ -52,7 +49,6 @@
             android:inputType="text">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/login_input"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
@@ -64,7 +60,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/email"
             android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
@@ -76,7 +71,6 @@
             android:inputType="text">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/email_input"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
@@ -88,7 +82,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password"
             android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
@@ -100,7 +93,6 @@
             android:inputType="text">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password_input"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:layout_margin="@dimen/margin"
@@ -112,7 +104,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/confirm_password"
             android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
@@ -125,7 +116,6 @@
             android:inputType="text">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/confirm_password_input"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:background="@color/white"
@@ -138,7 +128,6 @@
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/sign_up_button"
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

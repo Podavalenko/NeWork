@@ -2,7 +2,6 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_navigation"
     app:startDestination="@id/tabsFragment">
 
     <fragment
@@ -66,7 +65,8 @@
     </fragment>
     <fragment
         android:id="@+id/tabsFragment"
-        android:name="ru.netology.nework.fragment.TabsFragment" >
+        android:name="ru.netology.nework.fragment.TabsFragment"
+        android:label="@string/app_name">
         <action
             android:id="@+id/action_tabsFragment_to_listEventsFragment"
             app:destination="@id/listEventsFragment" />

@@ -1,7 +1,7 @@
 package ru.netology.nework.dto
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Post(
@@ -10,7 +10,7 @@ data class Post(
     val author: String,
     val authorAvatar: String?,
     val content: String,
-    var published: String,
+    val published: String,
     /**
      * Координаты
      */

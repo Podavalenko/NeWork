@@ -1,8 +1,6 @@
 package ru.netology.nework.viewmodel
 
 import android.net.Uri
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -56,8 +54,6 @@ class EventViewModel @Inject constructor(
     val edited = MutableLiveData(emptyEvent)
 
     private val _eventCreated = SingleLiveEvent<Unit>()
-    val eventCreated: LiveData<Unit>
-        get() = _eventCreated
 
     var currentId: Long? = null
 
@@ -78,8 +74,7 @@ class EventViewModel @Inject constructor(
             repository.data
                 .map { events ->
                     FeedEventModel(
-                        events.map { it.copy(ownedByMe = it.authorId == myId) },
-                        events.isEmpty()
+                        events.map { it.copy(ownedByMe = it.authorId == myId) }
                     )
                 }
         }.asLiveData(Dispatchers.Default)
@@ -105,10 +100,6 @@ class EventViewModel @Inject constructor(
         getAllEvents()
     }
 
-    fun invalidateEventDateTime() {
-        _eventDateTime.value = null
-    }
-
     fun setEventDateTime(dateTime: String) {
         _eventDateTime.value = dateTime
     }
@@ -129,12 +120,11 @@ class EventViewModel @Inject constructor(
         getAllEvents()
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     fun createNewEventOnLine() {
         lastAction = ActionType.SAVE
         edited.value?.let {
             _eventCreated.value = Unit
-            it.published = Instant.now().toString()
             it.datetime = Instant.now().toString()
             viewModelScope.launch {
                 try {
@@ -155,12 +145,11 @@ class EventViewModel @Inject constructor(
         lastAction = null
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     fun createNewEventOffLine() {
         lastAction = ActionType.SAVE
         edited.value?.let {
             _eventCreated.value = Unit
-            it.published = Instant.now().toString()
             it.datetime = Instant.now().toString()
             it.type = EventType.OFFLINE
             viewModelScope.launch {
@@ -291,12 +280,6 @@ class EventViewModel @Inject constructor(
         }
         lastAction = null
         currentId = null
-    }
-
-    fun retryRemoveEventById() {
-        currentId?.let {
-            removeEventById(it)
-        }
     }
 
     fun takePartEvent(id: Long) {

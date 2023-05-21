@@ -137,7 +137,7 @@ class CardPostFragment : Fragment() {
                 }
 
                 imageContainer.setOnClickListener {
-                    findNavController().navigate(R.id.imageFragment)
+                    findNavController().navigate(R.id.imageFragment, Bundle().apply { textArg = post.attachment?.url })
                 }
 
                 menuButton.visibility = if (post.ownedByMe) View.VISIBLE else View.INVISIBLE

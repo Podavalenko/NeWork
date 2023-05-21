@@ -1,24 +1,19 @@
 package ru.netology.nework.fragment
 
-import android.app.Activity
+
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.browser.customtabs.CustomTabsIntent
-import androidx.core.net.toFile
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.github.dhaval2404.imagepicker.ImagePicker
-import com.github.dhaval2404.imagepicker.constant.ImageProvider
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import ru.netology.nework.R
 import ru.netology.nework.adapter.OnInteractionListener
@@ -42,7 +37,7 @@ private const val BASE_URL = "https://netomedia.ru/api/media"
 @AndroidEntryPoint
 class MyPageFragment : Fragment() {
 
-    private lateinit var recyclerView: PostRecyclerView
+    private var recyclerView: PostRecyclerView? = null
 
     @Inject
     lateinit var auth: AppAuth
@@ -134,7 +129,7 @@ class MyPageFragment : Fragment() {
                     }
 
                     override fun onFullScreenImage(post: Post) {
-                        findNavController().navigate(R.id.imageFragment)
+                        findNavController().navigate(R.id.imageFragment, Bundle().apply { textArg = post.attachment?.url })
                     }
 
                     override fun onPlayAudio(post: Post) {
@@ -196,43 +191,7 @@ class MyPageFragment : Fragment() {
                                         .show()
                                     true
                                 }
-                                R.id.load_avatar -> {
 
-                                    val pickPhotoLauncher =
-                                        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-                                            when (it.resultCode) {
-                                                ImagePicker.RESULT_ERROR -> {
-                                                    Snackbar.make(
-                                                        binding.root,
-                                                        ImagePicker.getError(it.data),
-                                                        Snackbar.LENGTH_LONG
-                                                    ).show()
-                                                }
-                                                Activity.RESULT_OK -> {
-                                                    val uri: Uri? = it.data?.data
-                                                    userViewModel.saveUserAvatar(user, uri, uri?.toFile())
-                                                }
-                                            }
-                                        }
-
-                                    parentFragment?.let { it1 ->
-                                        ImagePicker.with(it1)
-                                            .crop()
-                                            .compress(2048)
-                                            .provider(ImageProvider.GALLERY)
-                                            .galleryMimeTypes(
-                                                arrayOf(
-                                                    "image/png",
-                                                    "image/jpeg",
-                                                )
-                                            )
-                                            .createIntent(pickPhotoLauncher::launch)
-                                    }
-
-
-
-                                    true
-                                }
                                 else -> false
                             }
                         }
@@ -245,19 +204,23 @@ class MyPageFragment : Fragment() {
         return binding.root
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        recyclerView = null
+    }
+
     override fun onResume() {
-        if (::recyclerView.isInitialized) recyclerView.createPlayer()
+        recyclerView?.createPlayer()
         super.onResume()
     }
 
     override fun onPause() {
-        if (::recyclerView.isInitialized) recyclerView.releasePlayer()
+        recyclerView?.releasePlayer()
         super.onPause()
     }
 
-
     override fun onStop() {
-        if (::recyclerView.isInitialized) recyclerView.releasePlayer()
+        recyclerView?.releasePlayer()
         super.onStop()
     }
 

@@ -1,7 +1,7 @@
 package ru.netology.nework.dto
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Job(
@@ -11,5 +11,5 @@ data class Job(
     val start: Long,
     val finish: Long? = null,
     val link: String? = null,
-    var userId: Long = 0
+
 ): Parcelable

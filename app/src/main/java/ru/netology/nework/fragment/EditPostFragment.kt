@@ -3,7 +3,6 @@ package ru.netology.nework.fragment
 import android.Manifest
 import android.app.Activity
 import android.content.Intent
-import android.database.Cursor
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -18,7 +17,6 @@ import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.bumptech.glide.Glide
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.github.dhaval2404.imagepicker.constant.ImageProvider
 import com.google.android.exoplayer2.MediaItem
@@ -27,12 +25,10 @@ import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import ru.netology.nework.R
 import ru.netology.nework.databinding.FragmentEditPostBinding
-import ru.netology.nework.databinding.FragmentNewPostBinding
 import ru.netology.nework.enumeration.AttachmentType
 import ru.netology.nework.service.AndroidUtils
 import ru.netology.nework.service.StringArg
 import ru.netology.nework.util.MediaUtils
-import ru.netology.nework.util.PermissionsManager
 import ru.netology.nework.viewmodel.PostViewModel
 import java.io.File
 

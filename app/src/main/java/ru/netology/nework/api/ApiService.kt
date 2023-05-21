@@ -3,23 +3,14 @@ package ru.netology.nework.api
 import okhttp3.Interceptor
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
-import ru.netology.nework.BuildConfig
-import ru.netology.nework.auth.AppAuth
 import ru.netology.nework.auth.AuthState
 import ru.netology.nework.dto.*
 
 private const val BASE_URL = "https://netomedia.ru/api/"
-
-private val logging = HttpLoggingInterceptor().apply {
-    if (BuildConfig.DEBUG) {
-        level = HttpLoggingInterceptor.Level.BODY
-    }
-}
 
 fun okhttp(vararg interceptors: Interceptor): OkHttpClient = OkHttpClient.Builder()
     .apply {
@@ -84,14 +75,14 @@ interface ApiService {
     @POST("users/authentication")
     suspend fun updateUser(
         @Field("login") login: String,
-        @Field("pass") pass: String
+        @Field("password") pass: String
     ): Response<AuthState>
 
     @FormUrlEncoded
     @POST("users/registration")
     suspend fun registerUser(
         @Field("login") login: String,
-        @Field("pass") pass: String,
+        @Field("password") pass: String,
         @Field("name") name: String
     ): Response<AuthState>
 
@@ -145,13 +136,7 @@ interface ApiService {
         @Path("postId") postId: Long
     ): Response<Post>
 
-    @DELETE("{authorId}/wall/{postId}/likes")
-    suspend fun disLikePostOnWall(
-        @Path("authorId") authorId: Long,
-        @Path("postId") postId: Long
-    ): Response<Post>
-
-//    JOB
+    //    JOB
 
     @GET("{userId}/jobs")
     suspend fun getAllJobs(@Path("userId") userId: Long): Response<List<Job>>

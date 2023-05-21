@@ -1,8 +1,6 @@
 package ru.netology.nework.viewmodel
 
 import android.net.Uri
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -21,7 +19,6 @@ import ru.netology.nework.model.AttachmentModel
 import ru.netology.nework.repository.PostRepository
 import ru.netology.nework.service.SingleLiveEvent
 import java.io.File
-import java.time.Instant
 import javax.inject.Inject
 
 private val emptyPost = Post(
@@ -73,8 +70,6 @@ class PostViewModel @Inject constructor(
     val edited = MutableLiveData(emptyPost)
 
     private val _postCreated = SingleLiveEvent<Unit>()
-    val postCreated: LiveData<Unit>
-        get() = _postCreated
 
     var currentId: Long? = null
 
@@ -82,13 +77,10 @@ class PostViewModel @Inject constructor(
 
     var lastAction: ActionType? = null
 
-    var currentAttachment: AttachmentType? = null
-
     init {
         loadPosts()
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun tryAgain() {
         when (lastAction) {
             ActionType.LIKEBYID -> retryLikeById()
@@ -117,17 +109,6 @@ class PostViewModel @Inject constructor(
     fun retryLoadPosts() {
         loadPosts()
     }
-
-    fun getLastTen() =
-        viewModelScope.launch {
-            try {
-                _dataState.value = FeedModelState(loading = true)
-                repository.getLastTen()
-                _dataState.value = FeedModelState()
-            } catch (e: Exception) {
-                _dataState.value = FeedModelState(error = true)
-            }
-        }
 
     fun getById(id: Long) =
         viewModelScope.launch {
@@ -244,35 +225,13 @@ class PostViewModel @Inject constructor(
         }
     }
 
-    fun getPostNotExist(id: Long) {
-        viewModelScope.launch {
-            try {
-                _dataState.value = FeedModelState()
-                repository.getPostNotExist(id)
-                _dataState.value = FeedModelState()
-            } catch (e: Exception) {
-                _dataState.value = FeedModelState(error = true)
-            }
-        }
-    }
 
 
-    fun refreshPosts() = viewModelScope.launch {
-        try {
-            _dataState.value = FeedModelState(refreshing = true)
-            repository.getAll()
-            _dataState.value = FeedModelState()
-        } catch (e: Exception) {
-            _dataState.value = FeedModelState(error = true)
-        }
-    }
-
-    @RequiresApi(Build.VERSION_CODES.O)
     fun save() {
         lastAction = ActionType.SAVE
         edited.value?.let {
             _postCreated.value = Unit
-            it.published = Instant.now().toString()
+            //it.published = Instant.now().toString()
             viewModelScope.launch {
                 try {
                     when (_attachment.value) {
@@ -322,7 +281,7 @@ class PostViewModel @Inject constructor(
         lastAction = null
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     fun retrySave() {
         save()
     }

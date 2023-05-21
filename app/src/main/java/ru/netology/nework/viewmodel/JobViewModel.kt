@@ -1,7 +1,6 @@
 package ru.netology.nework.viewmodel
 
-import android.os.Build
-import androidx.annotation.RequiresApi
+
 import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -20,8 +19,7 @@ private val emptyJob = Job(
     start = 0,
     finish = null,
     link = null,
-    userId = 0
-)
+    )
 
 @HiltViewModel
 class JobViewModel @Inject constructor(
@@ -35,8 +33,6 @@ class JobViewModel @Inject constructor(
     val edited = MutableLiveData(emptyJob)
 
     private val _jobCreated = SingleLiveEvent<Unit>()
-    val jobCreated: LiveData<Unit>
-        get() = _jobCreated
 
     val data = repository.data.asLiveData(Dispatchers.Default)
 
@@ -74,12 +70,12 @@ class JobViewModel @Inject constructor(
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     fun createNewJob(userId: Long) {
         lastAction = ActionType.SAVE
         currentId = userId
         edited.value?.let {
-            it.userId = userId
+
             _jobCreated.value = Unit
             viewModelScope.launch {
                 try {

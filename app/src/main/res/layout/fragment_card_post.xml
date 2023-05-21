@@ -64,7 +64,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/post_with_media_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin"
@@ -85,7 +84,6 @@
                 tools:text="Еду на Comic-con! Ура! Кто со мной?" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/play_audio"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="start|center"
@@ -100,7 +98,6 @@
                 app:iconTint="?attr/colorControlNormal" />
 
             <ImageView
-                android:id="@+id/image_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin"
@@ -108,7 +105,6 @@
                 tools:src="@drawable/ic_outline_mode_comment_24" />
 
             <FrameLayout
-                android:id="@+id/group_for_video"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin"
@@ -116,12 +112,10 @@
                 android:visibility="gone" >
 
                 <ImageView
-                    android:id="@+id/video_container"
                     android:layout_width="match_parent"
                     android:layout_height="300dp" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/play_video"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -134,7 +128,6 @@
                     app:iconSize="48dp" />
 
                 <ProgressBar
-                    android:id="@+id/video_progress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:visibility="gone" />
@@ -155,7 +148,6 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/likes"
                     style="@style/Widget.AppTheme.LikeButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

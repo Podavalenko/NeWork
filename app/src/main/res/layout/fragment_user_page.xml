@@ -22,7 +22,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/avatar_input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/avatar_input"
@@ -41,7 +40,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
@@ -51,7 +49,6 @@
             tools:text="Имя пользователя" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/get_occupation_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
@@ -82,7 +79,6 @@
             tools:listitem="@layout/fragment_card_post" />
 
         <ProgressBar
-            android:id="@+id/progress"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,7 +89,6 @@
             app:layout_constraintTop_toTopOf="@id/posts_container" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/error"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/blue_transparent"
@@ -102,7 +97,6 @@
             android:padding="@dimen/margin" >
 
             <TextView
-                android:id="@+id/error_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -113,7 +107,6 @@
                 android:textSize="18sp" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/try_again_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

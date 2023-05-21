@@ -32,8 +32,6 @@ class EditMyJobFragment : Fragment() {
         ownerProducer = ::requireParentFragment
     )
 
-    var eventType: EventType? = null
-
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater,

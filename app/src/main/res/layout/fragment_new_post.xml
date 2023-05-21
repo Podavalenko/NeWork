@@ -29,26 +29,22 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <FrameLayout
-                android:id="@+id/photo_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone">
 
                 <ImageView
-                    android:id="@+id/photo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal" />
             </FrameLayout>
 
             <FrameLayout
-                android:id="@+id/audio_container"
                 android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/audio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
@@ -58,20 +54,17 @@
             </FrameLayout>
 
             <FrameLayout
-                android:id="@+id/video_container"
                 android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <com.google.android.exoplayer2.ui.PlayerView
-                    android:id="@+id/video_player_view"
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
                     android:layout_gravity="center_horizontal" />
             </FrameLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/remove_attachment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|bottom"
@@ -103,7 +96,6 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/pick_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -113,7 +105,6 @@
             app:iconTint="@color/white" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/take_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin"
@@ -123,7 +114,6 @@
             app:iconTint="@color/white" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/download_mp3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin"
@@ -136,7 +126,6 @@
             app:iconTint="@color/white" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/download_mp4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin"
