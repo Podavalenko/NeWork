@@ -2,13 +2,11 @@ package ru.netology.nework.fragment
 
 import android.app.Activity
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresApi
 import androidx.core.net.toFile
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -20,7 +18,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import ru.netology.nework.R
 import ru.netology.nework.databinding.FragmentEditEventBinding
 import ru.netology.nework.enumeration.AttachmentType
-import ru.netology.nework.enumeration.EventType
 import ru.netology.nework.service.AndroidUtils
 import ru.netology.nework.service.StringArg
 import ru.netology.nework.viewmodel.EventViewModel
@@ -36,7 +33,7 @@ class EditEventFragment : Fragment() {
         ownerProducer = ::requireParentFragment
     )
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

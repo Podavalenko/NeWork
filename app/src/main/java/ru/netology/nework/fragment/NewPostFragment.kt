@@ -4,12 +4,10 @@ import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.*
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresApi
 import androidx.core.net.toFile
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -44,8 +42,6 @@ class NewPostFragment : Fragment() {
 
     private var mediaPlayer: ExoPlayer? = null
 
-    private val permissionsRequestCode = 963
-    lateinit var permissionManager: PermissionsManager
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -68,8 +64,6 @@ class NewPostFragment : Fragment() {
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
         )
 
-        permissionManager =
-            PermissionsManager(requireActivity(), permissions, permissionsRequestCode)
 
         arguments?.textArg
             ?.let(binding.edit::setText)
@@ -163,18 +157,7 @@ class NewPostFragment : Fragment() {
                 audioContainer.visibility = View.VISIBLE
                 removeAttachment.visibility = View.VISIBLE
 
-                if (!permissionManager.checkPermissions()) {
-                    permissionManager.requestPermissions()
-                    Snackbar.make(
-                        binding.root,
-                        getString(R.string.grant_storage_permissions_dialog_message),
-                        Snackbar.LENGTH_LONG
-                    )
-                        .setAnchorView(binding.audio)
-                        .setAction(getString(R.string.everything_fine), {})
-                        .show()
-                    return@setOnClickListener
-                }
+
                 val intent = Intent(
                     Intent.ACTION_PICK,
                     MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
@@ -187,17 +170,7 @@ class NewPostFragment : Fragment() {
                 binding.videoContainer.visibility = View.VISIBLE
                 binding.removeAttachment.visibility = View.VISIBLE
 
-                if (!permissionManager.checkPermissions()) {
-                    permissionManager.requestPermissions()
-                    Snackbar.make(
-                        binding.root,
-                        getString(R.string.grant_storage_permissions_dialog_message),
-                        Snackbar.LENGTH_LONG
-                    )
-                        .setAction(getString(R.string.everything_fine), {})
-                        .show()
-                    return@setOnClickListener
-                }
+
                 val intent = Intent(
                     Intent.ACTION_PICK,
                     MediaStore.Video.Media.EXTERNAL_CONTENT_URI
@@ -244,7 +217,7 @@ class NewPostFragment : Fragment() {
         inflater.inflate(R.menu.new_post_menu, menu)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.save -> {

@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nework.R
 import ru.netology.nework.databinding.FragmentCardMyOccupationBinding
-import ru.netology.nework.databinding.FragmentCardUserOccupationBinding
 import ru.netology.nework.dto.Job
 
 interface MyJobListener {

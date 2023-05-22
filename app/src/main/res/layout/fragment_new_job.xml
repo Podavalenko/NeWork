@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/company_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="@string/name_company"
@@ -18,6 +19,7 @@
         android:focusable="true" >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/company_name_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corners"
@@ -28,6 +30,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/position"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="@string/position"
@@ -38,6 +41,7 @@
         android:focusable="true" >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/position_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corners"
@@ -48,6 +52,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/start"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="@string/start"
@@ -60,6 +65,7 @@
         android:focusable="true" >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/start_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corners"
@@ -70,6 +76,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/end"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="@string/end"
@@ -81,6 +88,7 @@
         android:focusable="true" >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/end_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corners"

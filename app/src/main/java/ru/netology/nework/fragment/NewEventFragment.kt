@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.view.*
 import java.util.*
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresApi
 import androidx.core.net.toFile
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -137,7 +136,7 @@ class NewEventFragment : Fragment() {
         inflater.inflate(R.menu.new_post_menu, menu)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.save -> {

@@ -10,6 +10,7 @@
     tools:context=".fragment.CardEventFragment">
 
     <ImageView
+        android:id="@+id/event_picture"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_margin="@dimen/margin"
@@ -17,6 +18,7 @@
         android:src="@drawable/ic_baseline_event_note_blue" />
 
     <TextView
+        android:id="@+id/event_author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
@@ -26,6 +28,7 @@
         tools:text="фестиваль" />
 
     <TextView
+        android:id="@+id/event_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
@@ -63,6 +66,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/event_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin"
@@ -70,6 +74,7 @@
                 tools:text="Онлайн" />
 
             <TextView
+                android:id="@+id/event_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin"
@@ -79,6 +84,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/event_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin"
@@ -88,6 +94,7 @@
             tools:text="3-4 июня 2023 года Питер" />
 
         <ImageView
+            android:id="@+id/image_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin"
@@ -102,6 +109,7 @@
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/likes_button"
                 style="@style/Widget.AppTheme.LikeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -116,6 +124,7 @@
                 tools:ignore="TouchTargetSizeCheck" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/take_a_part_button"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -129,6 +138,7 @@
                 tools:ignore="TouchTargetSizeCheck" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/deny_button"
                 style="@style/Widget.AppTheme.LikeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"

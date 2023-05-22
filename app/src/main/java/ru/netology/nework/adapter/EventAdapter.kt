@@ -7,11 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
-import androidx.compose.ui.res.stringResource
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import me.saket.bettermovementmethod.BetterLinkMovementMethod
 import ru.netology.nework.R
 import ru.netology.nework.databinding.FragmentCardEventBinding
@@ -31,8 +29,6 @@ interface OnEventListener {
     fun onFullImage(event: Event)
     fun onLink(url: String)
 }
-
-private const val BASE_URL = "https://netomedia.ru/api/"
 
 class EventAdapter(private val onEventListener: OnEventListener) :
     ListAdapter<Event, EventViewHolder>(EventDiffCallback()) {

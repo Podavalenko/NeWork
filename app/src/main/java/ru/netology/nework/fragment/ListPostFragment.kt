@@ -1,7 +1,6 @@
 package ru.netology.nework.fragment
 
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

@@ -7,6 +7,7 @@
     tools:context=".fragment.ListPostFragment">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp">
@@ -27,6 +28,7 @@
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_new_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin"
@@ -37,6 +39,7 @@
         app:srcCompat="@drawable/ic_baseline_add_24" />
 
     <ProgressBar
+        android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
@@ -46,6 +49,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/error"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/blue_transparent"
@@ -58,6 +62,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/error_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -68,6 +73,7 @@
             android:textSize="18sp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/try_again_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

@@ -1,11 +1,10 @@
 package ru.netology.nework.fragment
 
-import android.os.Build
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -14,7 +13,6 @@ import ru.netology.nework.R
 import ru.netology.nework.databinding.FragmentEditJobBinding
 import ru.netology.nework.dto.Job
 import ru.netology.nework.dto.User
-import ru.netology.nework.enumeration.EventType
 import ru.netology.nework.service.AndroidUtils
 import ru.netology.nework.service.JobArg
 import ru.netology.nework.service.UserArg
@@ -32,7 +30,7 @@ class EditMyJobFragment : Fragment() {
         ownerProducer = ::requireParentFragment
     )
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

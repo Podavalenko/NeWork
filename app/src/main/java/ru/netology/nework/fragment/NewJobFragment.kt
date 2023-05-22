@@ -1,11 +1,9 @@
 package ru.netology.nework.fragment
 
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -27,7 +25,7 @@ class NewJobFragment : Fragment() {
         var Bundle.showUser: User? by UserArg
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
